@@ -1,0 +1,19 @@
+{
+  "name": "practico-api-javascript",
+  "version": "1.0.0",
+  "description": "Curso práctico de consumo de API Rest con JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateo-andres/practico-api-javascript.git"
+  },
+  "author": "@takechi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mateo-andres/practico-api-javascript/issues"
+  },
+  "homepage": "https://github.com/mateo-andres/practico-api-javascript#readme"
+}
