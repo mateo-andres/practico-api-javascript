@@ -1,5 +1,5 @@
 searchFormBtn.addEventListener('click', () =>{
-  location.hash = '#search='
+  location.hash = '#search=' + searchFormInput.value
 })
 
 trendingBtn.addEventListener('click', () =>{
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', navigator, false)
 window.addEventListener('hashchange', navigator, false)
 
 function navigator() {
-  console.log({ location });
+  
 
   if (location.hash.startsWith('#trends')){
     trendsPage()
@@ -27,6 +27,7 @@ function navigator() {
   }else{
     homePage()
   }
+  window.scrollTo(0,0)
 }
 
 function homePage(){
@@ -63,6 +64,10 @@ function trendsPage(){
   categoriesPreviewSection.classList.add('inactive')
   genericSection.classList.remove('inactive')
   movieDetailSection.classList.add('inactive')
+
+  headerCategoryTitle.innerHTML = 'Tendencias'
+
+  getMoviesPreview()
 }
 function searchPage(){
   console.log('Search')
@@ -71,7 +76,7 @@ function searchPage(){
   headerSection.style.background = ''
   arrowBtn.classList.remove('inactive')
   arrowBtn.classList.remove('header-arrow--white')
-  headerCategoryTitle.classList.remove('inactive')
+  headerCategoryTitle.classList.add('inactive')
   headerTitle.classList.add('inactive')
   searchForm.classList.remove('inactive')
 
@@ -79,6 +84,9 @@ function searchPage(){
   categoriesPreviewSection.classList.add('inactive')
   genericSection.classList.remove('inactive')
   movieDetailSection.classList.add('inactive')
+
+  const [_, query] = location.hash.split('=') 
+  getMoviesBySearch(query)
 }
 function moviePage(){
   console.log('Movie')
@@ -95,6 +103,11 @@ function moviePage(){
   categoriesPreviewSection.classList.add('inactive')
   genericSection.classList.add('inactive')
   movieDetailSection.classList.remove('inactive')
+
+  const [_, movieId] = location.hash.split('=') 
+  getMoviesBySearch(movieId)
+
+  getMovieById(movieId)
 }
 function categoryPage(){
   console.log('Category')
@@ -111,4 +124,12 @@ function categoryPage(){
   categoriesPreviewSection.classList.add('inactive')
   genericSection.classList.remove('inactive')
   movieDetailSection.classList.add('inactive')
+
+  const [_, categoryData] = location.hash.split('=') 
+  const [categoryID, urlCategoryName] = categoryData.split('-')
+  const categoryName = urlCategoryName.replace('%20', ' ')
+
+  headerCategoryTitle.innerHTML = categoryName
+
+  getMoviesByCategory(categoryID)
 }
