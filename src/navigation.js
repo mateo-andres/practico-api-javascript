@@ -103,6 +103,7 @@ function moviePage(){
   categoriesPreviewSection.classList.add('inactive')
   genericSection.classList.add('inactive')
   movieDetailSection.classList.remove('inactive')
+  // document.footer.classList.add('inactive')
 
   const [_, movieId] = location.hash.split('=') 
   getMoviesBySearch(movieId)
