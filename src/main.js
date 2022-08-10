@@ -10,6 +10,8 @@ const api = axios.create({
 
 //Utils
 
+console.log(process.env.API_KEY);
+
 function createMovies(movies, container){
   container.innerHTML = ''
 
