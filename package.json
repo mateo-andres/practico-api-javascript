@@ -1,6 +1,7 @@
 {
   "name": "practico-api-javascript",
   "version": "1.0.0",
+  "type": "module",
   "description": "Curso práctico de consumo de API Rest con JavaScript",
   "main": "index.html",
   "scripts": {
