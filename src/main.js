@@ -1,6 +1,6 @@
-import { env } from 'process';
+// import { env } from 'process';
 
-export const API_KEY = env.API_KEY;
+const API_KEY = process.env.API_KEY;
 
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
@@ -131,3 +131,5 @@ async function getRelatedMovies(id){
   createMovies(relatedMovies, relatedMoviesContainer)
   relatedMoviesContainer.scroll(0,0)
 }
+
+// export { getTrendingMoviesPreview, getCategoriesPreview, getMoviesByCategory, getMoviesBySearch, getMoviesPreview, getMovieById, getRelatedMovies }
