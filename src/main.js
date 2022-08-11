@@ -14,6 +14,8 @@ const api = axios.create({
 
 //Utils
 
+console.log('prueba')
+console.log('pruebaAPI', API_KEY);
 
 function createMovies(movies, container){
   container.innerHTML = ''
