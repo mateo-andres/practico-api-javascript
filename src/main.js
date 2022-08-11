@@ -1,7 +1,3 @@
-// import { env } from 'process';
-
-const API_KEY = process.env.API_KEY;
-
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
   headers:{
@@ -13,9 +9,6 @@ const api = axios.create({
 })
 
 //Utils
-
-console.log('prueba')
-console.log('pruebaAPI', API_KEY);
 
 function createMovies(movies, container){
   container.innerHTML = ''
@@ -61,8 +54,6 @@ function createCategories(categories, container){
 // llamados a la API
 
 async function getTrendingMoviesPreview() {
-  cconsole.log('prueba')
-  console.log('pruebaAPI', API_KEY);
   
   const { data } = await api('trending/movie/day')
   const movies = data.results
