@@ -61,7 +61,9 @@ function createCategories(categories, container){
 // llamados a la API
 
 async function getTrendingMoviesPreview() {
-  console.log(process.env.API_KEY);
+  cconsole.log('prueba')
+  console.log('pruebaAPI', API_KEY);
+  
   const { data } = await api('trending/movie/day')
   const movies = data.results
 
